@@ -7,7 +7,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
-    <script src="https://unpkg/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.12/babel.min.js" crossorigin></script>
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body class="bg-slate-50 text-slate-900 font-sans italic font-black leading-relaxed">
@@ -51,62 +51,4 @@
                 { s: "DOACs", e: "Anticoagulantes Orais Diretos" },
                 { s: "AVK", e: "Antagonistas da Vitamina K" },
                 { s: "ACB", e: "Carga Anticolinérgica" },
-                { s: "TFG", e: "Taxa de Filtração Glomerular" },
-                { s: "AINEs", e: "Anti-inflamatórios Não Esteroides" }
-            ], []);
-
-            const content = useMemo(() => ({
-                stoppstart: {
-                    title: "Resumo STOPP/START v3",
-                    subtitle: "Visão integrada das recomendações europeias atualizadas.",
-                    color: "bg-indigo-950",
-                    sections: [
-                        {
-                            heading: "STOP (Considerar Descontinuar)",
-                            items: [
-                                { class: "Anticolinérgicos", drug: "Oxibutinina, Tolterodina, Solifenacina", rationale: "Elevado risco de delirium, quedas e retenção urinária aguda.", loe: "A" },
-                                { class: "Benzodiazepinas", drug: "Alprazolam, Lorazepam, Diazepam", rationale: "Risco maior de quedas, fraturas e compromisso cognitivo severo.", loe: "A" },
-                                { class: "IBPs (Uso Crónico)", drug: "Omeprazol, Pantoprazol, Lansoprazol", rationale: "Uso > 8 semanas sem indicação clara; risco de hipomagnesémia.", loe: "B" }
-                            ]
-                        },
-                        {
-                            heading: "START (Considerar Iniciar)",
-                            items: [
-                                { class: "Classe: DOACs", drug: "Apixabano, Edoxabano, Rivaroxabano", rationale: "Prevenção de AVC na FA não valvular. Note: Use Varfarina apenas em válvulas.", loe: "A" },
-                                { class: "Classe: iSGLT2", drug: "Dapagliflozina, Empagliflozina", rationale: "Benefício robusto na IC-FEr; benefício emergente na IC-FEp.", loe: "A" }
-                            ]
-                        }
-                    ],
-                    biblio: "Fonte: O’Mahony D, et al. STOPP/START criteria version 3 (2023)."
-                },
-                stop: {
-                    title: "Critérios STOP",
-                    subtitle: STEP_SUBTITLES[2],
-                    color: "bg-orange-600", itemBg: "bg-orange-50", itemBorder: "border-orange-100",
-                    items: [
-                        { class: "Anticolinérgicos Urinários", drug: "Oxibutinina, Tolterodina, Solifenacina", rationale: "Racional: Elevada carga anticolinérgica (ACB). Risco de delirium e quedas.", loe: "A" },
-                        { class: "Antiespasmódicos GI", drug: "Butilescopolamina (Efeito Central Major)", rationale: "Racional: Perfil antimuscarínico central potente e perigoso no idoso.", loe: "A" },
-                        { class: "Benzodiazepinas", drug: "Alprazolam, Lorazepam, Diazepam", rationale: "Racional: Sedação excessiva, risco maior de fraturas e declínio cognitivo.", loe: "A" },
-                        { class: "IBPs (Sem indicação)", drug: "Omeprazol, Pantoprazol, Lansoprazol", rationale: "Racional: Risco de C. difficile e fraturas em uso prolongado (>8 sem).", loe: "B" },
-                        { class: "AINEs (Uso Crónico)", drug: "Naproxeno, Ibuprofeno, Diclofenac", rationale: "Racional: Risco hemorrágico GI e renal (Contexto: IC, DRC, HTA).", loe: "B" },
-                        { class: "Sulfonilureias Longa Duração", drug: "Glibenclamida, Clorpropamida", rationale: "Racional: Risco muito elevado de hipoglicemias graves e prolongadas.", loe: "A" }
-                    ],
-                    biblio: "Referência: STOPP/START criteria version 3 (2023)."
-                },
-                switch: {
-                    title: "Estratégia SWITCH",
-                    subtitle: STEP_SUBTITLES[3],
-                    color: "bg-blue-600", itemBg: "bg-blue-50", itemBorder: "border-blue-100",
-                    items: [
-                        { evaluate: "Hidroxizina, Clemastina ou Difenidramina", evaluateClass: "Classe: Anti-histamínicos de 1.ª Geração", targetClass: "Substituir por: Anti-histamínicos de 2.ª Geração", examples: "Cetirizina, Loratadina, Desloratadina", rationale: "Racional: Reduzir carga anticolinérgica (ACB) e sedação profunda.", loe: "A" },
-                        { evaluate: "Glibenclamida ou Clorpropamida", evaluateClass: "Classe: Sulfonilureias de longa duração", targetClass: "Substituir por: Biguanidas / iDPP4", examples: "Metformina, Sitagliptina, Vildagliptina", rationale: "Racional: Prevenir hipoglicemias graves e quedas.", loe: "A" },
-                        { evaluate: "Amitriptilina ou Clomipramina", evaluateClass: "Classe: Antidepressivos Tricíclicos", targetClass: "Substituir por: ISRS (Perfil Seguro)", examples: "Sertralina, Escitalopram (Evitar Paroxetina)", rationale: "Racional: Evitar toxicidade cardíaca e efeitos anticolinérgicos.", loe: "B" }
-                    ],
-                    biblio: "Fontes: Mendes et al. (2018) e Critérios STOPP/START v3."
-                },
-                start: {
-                    title: "Critérios START",
-                    subtitle: STEP_SUBTITLES[4],
-                    color: "bg-purple-500", itemBg: "bg-purple-50", itemBorder: "border-purple-100",
-                    items: [
-                        { class: "Classe: Anticoagulantes (DOACs)", drug: "Apixabano, Edoxabano, Rivaroxabano", rationale: "Racional: Prevenção AVC na FA. Use Varfarina apenas em válvulas mecânicas.", loe: "
+                { s: "TFG", e:
