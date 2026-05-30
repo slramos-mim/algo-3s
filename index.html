@@ -1,14 +1,15 @@
+```html
 <!DOCTYPE html>
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Algoritmo 3S - Gestão e Optimização no Idoso</title>
+    <title>Algoritmo 3S</title>
+    <meta name="robots" content="noindex, nofollow, noimageindex, noarchive, nosnippet">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.10/babel.min.js" crossorigin></script>
-    <meta name="robots" content="noindex, nofollow, noimageindex, noarchive, nosnippet">
 </head>
 <body class="bg-slate-50 text-slate-900 font-sans italic font-black leading-relaxed">
 
@@ -17,7 +18,7 @@
     <script type="text/babel">
         const { useState, useMemo } = React;
         
-        // Native SVG mapping of exact Lucide icons used to guarantee zero dependency loading  failure
+        // Native SVG mapping of exact Lucide icons used to guarantee zero dependency loading failure
         const CheckCircle = ({ size = 16, className = "" }) => (
             <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" /></svg>
         );
@@ -40,7 +41,7 @@
             <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><rect width="8" height="4" x="8" y="2" rx="1" ry="1" /><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" /><path d="m9 14 2 2 4-4" /></svg>
         );
         const Hash = ({ size = 16, className = "" }) => (
-            <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><line x1="4" x2="20" y1="9" y2="9" /><line x1="4" x2="20" y1="15" y2="15"px /><line x1="10" x2="8" y1="3" y2="21" /><line x1="16" x2="14" y1="3" y2="21" /></svg>
+            <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><line x1="4" x2="20" y1="9" y2="9" /><line x1="4" x2="20" y1="15" y2="15" /><line x1="10" x2="8" y1="3" y2="21" /><line x1="16" x2="14" y1="3" y2="21" /></svg>
         );
         const FileText = ({ size = 16, className = "" }) => (
             <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" /><path d="M14 2v4a2 2 0 0 0 2 2h4" /><line x1="10" x2="8" y1="9" y2="9" /><line x1="16" x2="8" y1="13" y2="13" /><line x1="16" x2="8" y1="17" y2="17" /></svg>
@@ -194,7 +195,7 @@
                 { class: "Classe: Anticoagulantes (DOACs)", drug: "Apixabano, Edoxabano, Rivaroxabano", rationale: "Racional: Prevenção AVC na FA. Use Varfarina apenas em válvulas mecânicas.", loe: "A" },
                 { class: "Classe: iSGLT2 (Gliflozinas)", drug: "Dapagliflozina, Empagliflozina", rationale: "Racional: Benefício robusto na IC-FEr; benefício emergente na IC-FEp.", loe: "A" },
                 { class: "Classe: Bisfosfonatos", drug: "Ácido Alendrónico, Risedronato, Ibandronato", rationale: "Racional: Prevenção secundária de fraturas em osteoporose.", loe: "A" },
-                { class: "Classe: Estatinas", drug: "Atorvastatina, Rosuvastatina, Sinvastatina", rationale: "Racional: Prevenção secundária em doença vascular aterosclerótica.", loe: "A" }
+                { class: "Classe: Estatinas", drug: "Atorvastatina, Rosuvastatina, Simvastatina", rationale: "Racional: Prevenção secundária em doença vascular aterosclerótica.", loe: "A" }
               ],
               biblio: "Referência: STOPP/START criteria version 3 (2023)."
             },
@@ -237,148 +238,157 @@
           const reset = () => { setStep(1); setModal(null); };
 
           return (
-            <div className="min-h-screen bg-slate-50 text-slate-900 font-sans italic font-black leading-relaxed">
-              {/* HEADER INSTITUCIONAL */}
-              <nav className="w-full max-w-xl mx-auto bg-white border-b-4 border-indigo-950 sticky top-0 z-50 px-5 py-3 shadow-xl">
-                <div className="flex flex-col gap-3 mb-5 font-black">
-                  <div className="flex items-center justify-between">
-                    <div className="flex flex-col leading-none shrink-0 font-black">
-                       <p className="text-[9px] text-indigo-600 font-black tracking-widest uppercase italic leading-none font-black">FMCB.UALG</p>
-                       <p className="text-[13px] text-slate-800 font-black underline decoration-indigo-200 mt-1 leading-none font-black">Sílvia Ramos</p>
-                    </div>
-                    <div className="bg-slate-50 border border-slate-200 rounded-lg px-2.5 py-1 flex items-center gap-1.5 shadow-sm shrink-0">
-                       <Stethoscope size={14} className="text-indigo-600 font-black" />
-                       <span className="text-[8px] uppercase tracking-tighter font-black font-black">Apoio Decisão</span>
-                    </div>
-                  </div>
-                  <div className="w-full bg-indigo-950 text-white px-6 py-3 rounded-xl shadow-2xl border-l-4 border-indigo-500 text-center font-black">
-                     <h1 className="text-xl font-black uppercase tracking-tighter leading-none italic font-black">Algoritmo 3S</h1>
-                  </div>
-                </div>
-
-                {/* ATALHOS */}
-                <div className="grid grid-cols-4 gap-1.5 text-center font-black">
-                  <button onClick={() => setModal("stoppstart")} className="flex flex-col items-center gap-1 p-1.5 bg-indigo-50 border border-indigo-100 rounded-lg shadow-sm transition active:scale-95 font-black">
-                     <BookOpen size={12} className="text-indigo-600 font-black font-black" />
-                     <span className="text-[7px] uppercase tracking-tighter font-black font-black">STOPP/START</span>
-                  </button>
-                  <button onClick={() => setModal("beers")} className="flex flex-col items-center gap-1 p-1.5 bg-amber-50 border border-amber-100 rounded-lg shadow-sm transition active:scale-95 font-black">
-                     <FileText size={12} className="text-amber-600 font-black font-black" />
-                     <span className="text-[7px] uppercase tracking-tighter font-black font-black">Beers 2023</span>
-                  </button>
-                  <button onClick={() => setModal("fontes")} className="flex flex-col items-center gap-1 p-1.5 bg-emerald-50 border border-emerald-100 rounded-lg shadow-sm transition active:scale-95 font-black">
-                     <ExternalLink size={12} className="text-emerald-700 font-black font-black" />
-                     <span className="text-[7px] uppercase tracking-tighter font-black font-black">Referências</span>
-                  </button>
-                  <button onClick={() => setModal("abbrev")} className="flex flex-col items-center gap-1 p-1.5 bg-slate-100 border border-slate-200 rounded-lg shadow-sm transition active:scale-95 font-black">
-                     <Hash size={12} className="text-slate-600 font-black font-black" />
-                     <span className="text-[7px] uppercase tracking-tighter font-black font-black">Siglas</span>
-                  </button>
-                </div>
-
-                {/* BARRA DE EVOLUÇÃO (ALINHAMENTO EM GRID 5 COLUNAS) */}
-                <div className="mt-6 px-1 font-black">
-                   <div className="flex gap-1.5 font-black">
-                     {[1, 2, 3, 4, 5].map(i => (
-                       <div key={i} className={`h-1.5 rounded-full flex-1 transition-all duration-700 ${i <= step ? STEP_BG_COLORS[i] : "bg-slate-200"}`} />
-                     ))}
-                   </div>
-                   <div className="grid grid-cols-5 mt-2.5 text-[6px] text-slate-400 uppercase tracking-widest font-black italic font-black">
-                     {Object.entries(STEP_NAMES).map(([key, name]) => (
-                       <div key={key} className={`text-center transition-all ${Number(key) === step ? "text-slate-950 font-black scale-105 font-black" : ""}`}>
-                         {key} {name}
-                       </div>
-                     ))}
-                   </div>
-                </div>
-              </nav>
-
-              <main className="w-full max-w-xl mx-auto p-5 pb-20 font-black italic">
-                {step < 5 && (
-                  <div className="flex flex-col items-center">
-                    <div className="mb-10 text-center font-black">
-                       <span className="text-xl font-black text-slate-900 uppercase tracking-[0.3em] mb-2 block italic opacity-70">PASSO {step}</span>
-                       <h2 className={`text-6xl leading-none font-black italic uppercase tracking-tighter ${STEP_COLORS[step]}`}>
-                         {STEP_NAMES[step]}
-                       </h2>
-                       <p className={`text-base font-black italic uppercase tracking-tight mt-2 ${STEP_COLORS[step]} opacity-80`}>
-                         {STEP_SUBTITLES[step]}
-                       </p>
-                    </div>
-
-                    <div className={`bg-white rounded-[2.5rem] p-10 border-l-[16px] shadow-2xl w-full relative ${STEP_BG_COLORS[step].replace('bg-', 'border-')} font-black`}>
-                      <div className="space-y-6 mb-10">
-                        {step === 1 ? (
-                          <div className="space-y-6">
-                            <p className="text-slate-700 text-sm leading-relaxed">
-                              O objetivo deste algoritmo é apoiar a revisão da medicação no idoso, identificando potenciais riscos e otimizando a segurança farmacoterapêutica através dos critérios STOPP/START e Beers.
-                            </p>
-                            <div className="space-y-3 pt-2">
-                              {["Idade ≥ 65 anos", "Polifarmácia (≥ 5 fármacos diários)", "Risco de Quedas ou Fragilidade"].map((t, idx) => (
-                                <div key={idx} className="flex items-center gap-4 bg-slate-50 p-4 rounded-xl border border-slate-100">
-                                  <span className="text-indigo-600 font-black text-lg">{idx + 1}.</span>
-                                  <span className="text-[12px] font-bold">{t}</span>
-                                </div>
-                              ))}
-                            </div>
-                          </div>
-                        ) : (
-                          <div className="py-2">
-                            <button onClick={() => setModal(STEP_NAMES[step].toLowerCase())} className={`w-full text-white py-8 rounded-3xl text-[15px] font-black uppercase shadow-xl flex items-center justify-center gap-3 transition-all hover:brightness-110 active:scale-95 border-b-4 border-black/10 ${STEP_BG_COLORS[step]}`}>
-                              <List size={24} /> Consultar Recomendações Clínicas
-                            </button>
-                          </div>
-                        )}
+            <div className="min-h-screen bg-slate-50 text-slate-900 font-sans italic font-black leading-relaxed flex flex-col justify-between">
+              <div>
+                {/* HEADER INSTITUCIONAL */}
+                <nav className="w-full max-w-xl mx-auto bg-white border-b-4 border-indigo-950 sticky top-0 z-50 px-5 py-3 shadow-xl">
+                  <div className="flex flex-col gap-3 mb-5 font-black">
+                    <div className="flex items-center justify-between">
+                      <div className="flex flex-col leading-none shrink-0 font-black">
+                         <p className="text-[9px] text-indigo-600 font-black tracking-widest uppercase italic leading-none font-black">FMCB.UALG</p>
+                         <p className="text-[13px] text-slate-800 font-black underline decoration-indigo-200 mt-1 leading-none font-black">Sílvia Ramos</p>
                       </div>
-                      
-                      <button onClick={nextStep} className={`w-full py-4 rounded-xl text-white font-black uppercase shadow-lg active:scale-95 transition-all flex flex-col items-center justify-center gap-0 tracking-widest ${STEP_BG_COLORS[step + 1] || 'bg-slate-900'} opacity-90`}>
-                         <span className="text-[8px] font-black uppercase opacity-70 tracking-tighter leading-none mb-0.5">Avançar para passo {step + 1}</span>
-                         <span className="text-xl font-black uppercase leading-tight">{STEP_NAMES[step + 1]}</span>
-                      </button>
+                      <div className="bg-slate-50 border border-slate-200 rounded-lg px-2.5 py-1 flex items-center gap-1.5 shadow-sm shrink-0">
+                         <Stethoscope size={14} className="text-indigo-600 font-black" />
+                         <span className="text-[8px] uppercase tracking-tighter font-black font-black">Apoio Decisão</span>
+                      </div>
+                    </div>
+                    <div className="w-full bg-indigo-950 text-white px-6 py-3 rounded-xl shadow-2xl border-l-4 border-indigo-500 text-center font-black">
+                       <h1 className="text-xl font-black uppercase tracking-tighter leading-none italic font-black">Algoritmo 3S</h1>
                     </div>
                   </div>
-                )}
 
-                {/* ETAPA DE CONCLUSÃO (VERDE ESMERALDA) */}
-                {step === 5 && (
-                  <div className="text-center flex flex-col items-center">
-                    <div className="bg-emerald-50 p-8 rounded-full mb-6 border-2 border-emerald-100 shadow-inner">
-                       <CheckCircle size={60} className="text-emerald-700" />
-                    </div>
-                    <h2 className="text-4xl font-black text-slate-900 uppercase italic mb-10 tracking-tighter underline decoration-emerald-700 decoration-4 underline-offset-4">Revisão Concluída</h2>
-                    <div className="w-full space-y-6 text-left font-black">
-                        <div className="bg-amber-50 border-l-4 border-amber-400 p-6 rounded-xl shadow-sm mb-6 flex items-start gap-4">
-                          <AlertTriangle size={24} className="text-amber-500 shrink-0" />
-                          <p className="text-[12px] text-amber-900 leading-snug">
-                            <strong>JUÍZO CLÍNICO:</strong> A decisão clínica baseada no juízo de valor do profissional prevalece sobre as recomendações deste algoritmo, devendo ser individualizada.
-                          </p>
-                        </div>
-                        <div className="p-10 bg-white rounded-[3rem] border-4 border-emerald-50 shadow-2xl relative">
-                            <p className="text-[10px] font-black uppercase text-slate-400 tracking-widest mb-6 italic">Plano de Seguimento:</p>
-                            <div className="space-y-6 text-[14px] text-slate-700 italic font-black">
-                                <div className="flex gap-5 items-start">
-                                   <div className="p-3 bg-emerald-50 rounded-lg text-emerald-700 shrink-0"><ClipboardCheck size={20} /></div>
-                                   <div>
-                                      <p className="font-black text-slate-900 uppercase text-[11px] tracking-tight leading-none">Registo Clínico</p>
-                                      <p className="text-[12px] text-slate-500 mt-1 leading-snug">Documentar intervenções e fundamentar as alterações terapêuticas.</p>
-                                   </div>
-                                </div>
-                                <div className="flex gap-5 items-start">
-                                   <div className="p-3 bg-emerald-50 rounded-lg text-emerald-700 shrink-0"><RefreshCw size={20} /></div>
-                                   <div>
-                                      <p className="font-black text-slate-900 uppercase text-[11px] tracking-tight leading-none">Monitorização</p>
-                                      <p className="text-[12px] text-slate-500 mt-1 leading-snug">Avaliar eficácia e segurança em consulta de follow-up.</p>
-                                   </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <button onClick={reset} className="w-full mt-10 bg-indigo-950 text-white py-7 rounded-2xl font-black uppercase shadow-2xl flex items-center justify-center gap-4 active:scale-95 transition-all">
-                       Iniciar Novo Utente <RefreshCw size={18} />
+                  {/* ATALHOS */}
+                  <div className="grid grid-cols-4 gap-1.5 text-center font-black">
+                    <button onClick={() => setModal("stoppstart")} className="flex flex-col items-center gap-1 p-1.5 bg-indigo-50 border border-indigo-100 rounded-lg shadow-sm transition active:scale-95 font-black">
+                       <BookOpen size={12} className="text-indigo-600 font-black font-black" />
+                       <span className="text-[7px] uppercase tracking-tighter font-black font-black">STOPP/START</span>
+                    </button>
+                    <button onClick={() => setModal("beers")} className="flex flex-col items-center gap-1 p-1.5 bg-amber-50 border border-amber-100 rounded-lg shadow-sm transition active:scale-95 font-black">
+                       <FileText size={12} className="text-amber-600 font-black font-black" />
+                       <span className="text-[7px] uppercase tracking-tighter font-black font-black">Beers 2023</span>
+                    </button>
+                    <button onClick={() => setModal("fontes")} className="flex flex-col items-center gap-1 p-1.5 bg-emerald-50 border border-emerald-100 rounded-lg shadow-sm transition active:scale-95 font-black">
+                       <ExternalLink size={12} className="text-emerald-700 font-black font-black" />
+                       <span className="text-[7px] uppercase tracking-tighter font-black font-black">Referências</span>
+                    </button>
+                    <button onClick={() => setModal("abbrev")} className="flex flex-col items-center gap-1 p-1.5 bg-slate-100 border border-slate-200 rounded-lg shadow-sm transition active:scale-95 font-black">
+                       <Hash size={12} className="text-slate-600 font-black font-black" />
+                       <span className="text-[7px] uppercase tracking-tighter font-black font-black">Siglas</span>
                     </button>
                   </div>
-                )}
-              </main>
+
+                  {/* BARRA DE EVOLUÇÃO (ALINHAMENTO EM GRID 5 COLUNAS) */}
+                  <div className="mt-6 px-1 font-black">
+                     <div className="flex gap-1.5 font-black">
+                       {[1, 2, 3, 4, 5].map(i => (
+                         <div key={i} className={`h-1.5 rounded-full flex-1 transition-all duration-700 ${i <= step ? STEP_BG_COLORS[i] : "bg-slate-200"}`} />
+                       ))}
+                     </div>
+                     <div className="grid grid-cols-5 mt-2.5 text-[6px] text-slate-400 uppercase tracking-widest font-black italic font-black">
+                       {Object.entries(STEP_NAMES).map(([key, name]) => (
+                         <div key={key} className={`text-center transition-all ${Number(key) === step ? "text-slate-950 font-black scale-105 font-black" : ""}`}>
+                           {key} {name}
+                         </div>
+                       ))}
+                     </div>
+                  </div>
+                </nav>
+
+                <main className="w-full max-w-xl mx-auto p-5 pb-10 font-black italic">
+                  {step < 5 && (
+                    <div className="flex flex-col items-center">
+                      <div className="mb-10 text-center font-black">
+                         <span className="text-xl font-black text-slate-900 uppercase tracking-[0.3em] mb-2 block italic opacity-70">PASSO {step}</span>
+                         <h2 className={`text-6xl leading-none font-black italic uppercase tracking-tighter ${STEP_COLORS[step]}`}>
+                           {STEP_NAMES[step]}
+                         </h2>
+                         <p className={`text-base font-black italic uppercase tracking-tight mt-2 ${STEP_COLORS[step]} opacity-80`}>
+                           {STEP_SUBTITLES[step]}
+                         </p>
+                      </div>
+
+                      <div className={`bg-white rounded-[2.5rem] p-10 border-l-[16px] shadow-2xl w-full relative ${STEP_BG_COLORS[step].replace('bg-', 'border-')} font-black`}>
+                        <div className="space-y-6 mb-10">
+                          {step === 1 ? (
+                            <div className="space-y-6">
+                              <p className="text-slate-700 text-sm leading-relaxed">
+                                O objetivo deste algoritmo é apoiar a revisão da medicação no idoso, identificando potenciais riscos e otimizando a segurança farmacoterapêutica através dos critérios STOPP/START e Beers.
+                              </p>
+                              <div className="space-y-3 pt-2">
+                                {["Idade ≥ 65 anos", "Polifarmácia (≥ 5 fármacos diários)", "Risco de Quedas ou Fragilidade"].map((t, idx) => (
+                                  <div key={idx} className="flex items-center gap-4 bg-slate-50 p-4 rounded-xl border border-slate-100">
+                                    <span className="text-indigo-600 font-black text-lg">{idx + 1}.</span>
+                                    <span className="text-[12px] font-bold">{t}</span>
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          ) : (
+                            <div className="py-2">
+                              <button onClick={() => setModal(STEP_NAMES[step].toLowerCase())} className={`w-full text-white py-8 rounded-3xl text-[15px] font-black uppercase shadow-xl flex items-center justify-center gap-3 transition-all hover:brightness-110 active:scale-95 border-b-4 border-black/10 ${STEP_BG_COLORS[step]}`}>
+                                <List size={24} /> Consultar Recomendações Clínicas
+                              </button>
+                            </div>
+                          )}
+                        </div>
+                        
+                        <button onClick={nextStep} className={`w-full py-4 rounded-xl text-white font-black uppercase shadow-lg active:scale-95 transition-all flex flex-col items-center justify-center gap-0 tracking-widest ${STEP_BG_COLORS[step + 1] || 'bg-slate-900'} opacity-90`}>
+                           <span className="text-[8px] font-black uppercase opacity-70 tracking-tighter leading-none mb-0.5">Avançar para passo {step + 1}</span>
+                           <span className="text-xl font-black uppercase leading-tight">{STEP_NAMES[step + 1]}</span>
+                        </button>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* ETAPA DE CONCLUSÃO (VERDE ESMERALDA) */}
+                  {step === 5 && (
+                    <div className="text-center flex flex-col items-center">
+                      <div className="bg-emerald-50 p-8 rounded-full mb-6 border-2 border-emerald-100 shadow-inner">
+                         <CheckCircle size={60} className="text-emerald-700" />
+                      </div>
+                      <h2 className="text-4xl font-black text-slate-900 uppercase italic mb-10 tracking-tighter underline decoration-emerald-700 decoration-4 underline-offset-4">Revisão Concluída</h2>
+                      <div className="w-full space-y-6 text-left font-black">
+                          <div className="bg-amber-50 border-l-4 border-amber-400 p-6 rounded-xl shadow-sm mb-6 flex items-start gap-4">
+                            <AlertTriangle size={24} className="text-amber-500 shrink-0" />
+                            <p className="text-[12px] text-amber-900 leading-snug">
+                              <strong>JUÍZO CLÍNICO:</strong> A decisão clínica baseada no juízo de valor do profissional prevalece sobre as recomendações deste algoritmo, devendo ser individualizada.
+                            </p>
+                          </div>
+                          <div className="p-10 bg-white rounded-[3rem] border-4 border-emerald-50 shadow-2xl relative">
+                              <p className="text-[10px] font-black uppercase text-slate-400 tracking-widest mb-6 italic">Plano de Seguimento:</p>
+                              <div className="space-y-6 text-[14px] text-slate-700 italic font-black">
+                                  <div className="flex gap-5 items-start">
+                                     <div className="p-3 bg-emerald-50 rounded-lg text-emerald-700 shrink-0"><ClipboardCheck size={20} /></div>
+                                     <div>
+                                        <p className="font-black text-slate-900 uppercase text-[11px] tracking-tight leading-none">Registo Clínico</p>
+                                        <p className="text-[12px] text-slate-500 mt-1 leading-snug">Documentar intervenções e fundamentar as alterações terapêuticas.</p>
+                                     </div>
+                                  </div>
+                                  <div className="flex gap-5 items-start">
+                                     <div className="p-3 bg-emerald-50 rounded-lg text-emerald-700 shrink-0"><RefreshCw size={20} /></div>
+                                     <div>
+                                        <p className="font-black text-slate-900 uppercase text-[11px] tracking-tight leading-none">Monitorização</p>
+                                        <p className="text-[12px] text-slate-500 mt-1 leading-snug">Avaliar eficácia e segurança em consulta de follow-up.</p>
+                                     </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <button onClick={reset} className="w-full mt-10 bg-indigo-950 text-white py-7 rounded-2xl font-black uppercase shadow-2xl flex items-center justify-center gap-4 active:scale-95 transition-all">
+                         Iniciar Novo Utente <RefreshCw size={18} />
+                      </button>
+                    </div>
+                  )}
+                </main>
+              </div>
+
+              {/* CURRICULAR DISCLAIMER FOOTER */}
+              <footer className="w-full text-center py-4 bg-slate-100 border-t border-slate-200 mt-auto">
+                 <p className="text-[10px] uppercase tracking-wider text-slate-500 font-bold font-sans not-italic">
+                    ferramenta teste. Ambito curricular
+                 </p>
+              </footer>
 
               {/* MODAL SYSTEM */}
               {modal && (
@@ -508,3 +518,5 @@
     </script>
 </body>
 </html>
+
+```
