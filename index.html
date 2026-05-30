@@ -17,7 +17,6 @@
     <script type="text/babel">
         const { useState, useMemo } = React;
         
-        // Safe Icon component to prevent React error #130
         const Icon = ({ name, size = 16, className = "" }) => {
             if (!window.lucide || !window.lucide.icons) return null;
             const IconComponent = window.lucide.icons[name];
@@ -29,7 +28,7 @@
         const STEP_SUBTITLES = {
             1: "Elegibilidade e Objetivo Clínico",
             2: "Fármacos a considerar a descontinuação (PIMs)",
-            3: "Fármacos a considerar a substituição terapêutica",
+            3: "Fármacos a considerar a substitution terapêutica",
             4: "Fármacos a considerar a introdução / Omissões (PPOs)"
         };
         const STEP_COLORS = { 1: "text-indigo-600", 2: "text-orange-600", 3: "text-blue-600", 4: "text-purple-500", 5: "text-emerald-700" };
@@ -37,7 +36,7 @@
 
         const getLoeColor = (loe) => {
             if (loe === 'A') return "bg-indigo-950 text-white font-black";
-            if (loe === 'B') return "bg-indigo-500 text-white font-black";
+            if (loe === 'B') return "bg-indigo-50 text-white font-black";
             return "bg-slate-400 text-white font-black";
         };
 
@@ -67,4 +66,9 @@
                             items: [
                                 { class: "Anticolinérgicos", drug: "Oxibutinina, Tolterodina, Solifenacina", rationale: "Elevado risco de delirium, quedas e retenção urinária aguda.", loe: "A" },
                                 { class: "Benzodiazepinas", drug: "Alprazolam, Lorazepam, Diazepam", rationale: "Risco maior de quedas, fraturas e compromisso cognitivo severo.", loe: "A" },
-                                { class: "IBPs (Uso Crónico)", drug: "Omeprazol, Pant
+                                { class: "IBPs (Uso Crónico)", drug: "Omeprazol, Pantoprazol, Lansoprazol", rationale: "Uso > 8 semanas sem indicação clara; risco de hipomagnesémia.", loe: "B" }
+                            ]
+                        },
+                        {
+                            heading: "START (Considerar Iniciar)",
+                            items
